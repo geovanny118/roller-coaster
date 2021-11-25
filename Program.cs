@@ -7,6 +7,8 @@ namespace EXCERCISE_ARP_5
     {
         static void Main(string[] args)
         {
+            const double PENALTYVALUE = 2500;
+            
             Console.WriteLine("Taller ARP 5");
             List<int> list_number = new List<int>();
 

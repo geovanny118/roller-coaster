@@ -1,0 +1,15 @@
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/bin/Debug/net5.0/EXCERCISE_ARP_5.deps.json
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/bin/Debug/net5.0/EXCERCISE_ARP_5.runtimeconfig.json
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/bin/Debug/net5.0/EXCERCISE_ARP_5.runtimeconfig.dev.json
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/bin/Debug/net5.0/EXCERCISE_ARP_5.dll
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/bin/Debug/net5.0/ref/EXCERCISE_ARP_5.dll
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/bin/Debug/net5.0/EXCERCISE_ARP_5.pdb
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.csproj.AssemblyReference.cache
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.AssemblyInfoInputs.cache
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.AssemblyInfo.cs
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.csproj.CoreCompileInputs.cache
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.dll
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/ref/EXCERCISE_ARP_5.dll
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.pdb
+/Users/geovannyrojaslopez/Projects/EXCERCISE_ARP_5/obj/Debug/net5.0/EXCERCISE_ARP_5.genruntimeconfig.cache

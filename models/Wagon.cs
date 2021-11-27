@@ -4,7 +4,7 @@ public class Wagon
 {
     public Person Place_1 { get; set; }
     public Person Place_2 { get; set; }
-    public Wagon(){}
+    public Wagon() { }
     public Wagon(Person place_1, Person place_2)
     {
         Place_1 = place_1;
@@ -21,31 +21,35 @@ public class Wagon
     private int actualPosition = 0;
 
     //verifica si hay espacio disponible en la montaña rusa
-    public Boolean availableSpace {get; set;} = true;
+    public Boolean availableSpace { get; set; } = true;
 
     //Asigna una persona a un lugar con espacio disponible segun el orden
     public void addClient(Person client)
-    {          
-        if(wagon[actualPosition] == null)
+    {
+        if (wagon[actualPosition] == null)
         {
             wagon[actualPosition] = new Wagon();
             wagon[actualPosition].Place_1 = new Person();
             wagon[actualPosition].Place_2 = new Person();
         }
 
-        if(actualPosition<5){
-            if(wagon[actualPosition].Place_1.Name == null){
+        if (actualPosition < 5)
+        {
+            if (wagon[actualPosition].Place_1.Name == null)
+            {
                 wagon[actualPosition].Place_1 = client;
-            } 
-            else if(wagon[actualPosition].Place_2.Name == null){
+            }
+            else if (wagon[actualPosition].Place_2.Name == null)
+            {
                 wagon[actualPosition].Place_2 = client;
                 actualPosition++;
-            }  
+            }
         }
 
-        if(actualPosition >= 5){
+        if (actualPosition >= 5)
+        {
             availableSpace = false;
-        } 
+        }
     }
 
     //Recibe un cliente y verifica si ya hay mas miembros de la familia dentro de la montaña rusa
@@ -53,26 +57,32 @@ public class Wagon
     //Si hay 2 miembros de la misma familia, no puede entrar: return false
     public Boolean canEnterWagon(Person client)
     {
+        Boolean canEnterWagon = true;
         string lastname = client.Lastname_3;
         int amountPerFamily = 0;
-        
-        for(int i=0; i < wagon.Length; i++){
-            if(wagon[i].Place_1.Lastname_3 == lastname){
-                amountPerFamily++;
+
+        for (int i = 0; i < wagon.Length; i++)
+        {
+            if (amountPerFamily >= 2)
+            {
+                canEnterWagon = false;
+                Console.WriteLine("entro aca!!!!!!!!!!!!!!");
             }
 
-            if (wagon[i].Place_2.Lastname_3 == lastname)
+            if (wagon[i].Place_1.Lastname_3.Equals(lastname))
             {
                 amountPerFamily++;
+                Console.WriteLine("Entro apellido 1 " + amountPerFamily);
             }
 
-            if (amountPerFamily == 2)
+            if (wagon[i].Place_2.Lastname_3.Equals(lastname))
             {
-                return false;
+                {
+                    amountPerFamily++;
+                    Console.WriteLine("Entro apellido 2 " + amountPerFamily);
+                }
             }
         }
-
-        return true;
+        return canEnterWagon;
     }
-
 }

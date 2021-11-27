@@ -31,8 +31,8 @@ namespace EXCERCISE_ARP_5
             Console.WriteLine("hay puesto disponible; " + rollerCoaster.availableSpace);
 
             Console.WriteLine();
-            Person p1 = new Person("Geovanny", "Rojas", "Lopez", "perdomo");
-            Person p2 = new Person("Luis", "Fernando", "Molina", "perez");
+            Person p1 = new Person("Geovanny", "Rojas", "Lopez", "Perdomo");
+            Person p2 = new Person("Luis", "Fernando", "Molina", "Perez");
             Console.WriteLine("Puede entrar: " + "familia "+ p1.Lastname_3 + " " + rollerCoaster.canEnterWagon(p1)); 
             Console.WriteLine("Puede entrar: " + "familia "+ p2.Lastname_3 + " " + rollerCoaster.canEnterWagon(p2)); 
 

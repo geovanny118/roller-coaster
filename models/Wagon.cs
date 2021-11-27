@@ -66,20 +66,17 @@ public class Wagon
             if (amountPerFamily >= 2)
             {
                 canEnterWagon = false;
-                Console.WriteLine("entro aca!!!!!!!!!!!!!!");
             }
 
             if (wagon[i].Place_1.Lastname_3.Equals(lastname))
             {
                 amountPerFamily++;
-                Console.WriteLine("Entro apellido 1 " + amountPerFamily);
             }
 
             if (wagon[i].Place_2.Lastname_3.Equals(lastname))
             {
                 {
                     amountPerFamily++;
-                    Console.WriteLine("Entro apellido 2 " + amountPerFamily);
                 }
             }
         }

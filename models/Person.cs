@@ -5,8 +5,8 @@ public class Person {
     public String Lastname_1 { get; set; }
     public String Lastname_2 { get; set; }
     public String Lastname_3 { get; set; }
-    private string[] NAMES = { "kevin", "andres", "diego", "alexandra", "yamileth" };
-    private string[] LASTNAMES = { "cifuentes", "perez", "muñoz", "perdomo", "bermudez" };
+    private string[] NAMES = { "Kevin", "Andres", "Diego", "Alexandra", "Yamileth", "Cristian" };
+    private string[] LASTNAMES = { "Cifuentes", "Perez", "Muñoz", "Perdomo", "Bermudez", "Corrales" };
     public List<Person> row = new List<Person>();
     public Person(){}
     public Person(string name, string lastname_1, string lastname_2, string lastname_3){
@@ -21,19 +21,23 @@ public class Person {
         var seed = Environment.TickCount;
         var random = new Random(seed);
 
-        row.Add(new Person(NAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)]));
-        row.Add(new Person(NAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)]));
-        row.Add(new Person(NAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)]));
-        row.Add(new Person(NAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)]));
-        row.Add(new Person(NAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)], LASTNAMES[random.Next(0, 4)]));
+        int numberOfClients = 0;
+
+        while(numberOfClients<12){
+            row.Add(new Person(NAMES[random.Next(0, 6)], LASTNAMES[random.Next(0, 6)], LASTNAMES[random.Next(0, 6)], LASTNAMES[random.Next(0, 6)]));
+            numberOfClients++;
+        }
     }
     
-    //ver fila de clientes
+    //Ver fila de clientes
     public void viewClientRow(){
+        Console.WriteLine();
         Console.WriteLine("Client List: ");
+        int i = 1;
         foreach (var item in row)
         {
-            Console.WriteLine(item.Name + " " + item.Lastname_1 + " " + item.Lastname_2 + " " + item.Lastname_3);
+            Console.WriteLine(i + " " +item.Name + " " + item.Lastname_1 + " " + item.Lastname_2 + " " + item.Lastname_3);
+            i++;
         }
     }
 }

@@ -11,15 +11,44 @@ namespace EXCERCISE_ARP_5
             Person clients = new Person();
             clients.generateClientRow();
             clients.viewClientRow();
-            
+
             Wagon rollerCoaster = new Wagon();
-            rollerCoaster.fillWagon(clients.row);
+
+            Console.WriteLine();
+            Console.WriteLine("hay puesto disponible; " + rollerCoaster.availableSpace);
+            if(rollerCoaster.availableSpace){
+                rollerCoaster.addClient(clients.row[0]); //vagon 1 posicion 1
+                rollerCoaster.addClient(clients.row[1]); //vagon 1 posicion 2
+                rollerCoaster.addClient(clients.row[2]); //vagon 2 posicion 1
+                rollerCoaster.addClient(clients.row[3]); //vagon 2 posicion 2
+                rollerCoaster.addClient(clients.row[4]); //vagon 3 posicion 1
+                rollerCoaster.addClient(clients.row[5]); //vagon 3 posicion 2
+                rollerCoaster.addClient(clients.row[6]); //vagon 4 posicion 1
+                rollerCoaster.addClient(clients.row[7]); //vagon 4 posicion 2
+                rollerCoaster.addClient(clients.row[8]); //vagon 5 posicion 1
+                rollerCoaster.addClient(clients.row[9]); //vagon 5 posicion 2
+            }
+            Console.WriteLine("hay puesto disponible; " + rollerCoaster.availableSpace);
+
+            Console.WriteLine();
+            Person p1 = new Person("Geovanny", "Rojas", "Lopez", "perdomo");
+            Person p2 = new Person("Luis", "Fernando", "Molina", "perez");
+            Console.WriteLine("Puede entrar: " + "familia "+ p1.Lastname_3 + " " + rollerCoaster.canEnterWagon(p1)); 
+            Console.WriteLine("Puede entrar: " + "familia "+ p2.Lastname_3 + " " + rollerCoaster.canEnterWagon(p2)); 
+
+            Console.WriteLine();
+            Console.WriteLine("Roller Coaster Position: ");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(rollerCoaster.wagon[i].Place_1.Name + " " + rollerCoaster.wagon[i].Place_1.Lastname_3 + " - " + rollerCoaster.wagon[i].Place_2.Name + " " + rollerCoaster.wagon[i].Place_2.Lastname_3);
+            }
+            
 
             //LLenar lista de personas que intentaron entrar al tren, OJO SOLO SE USA HASTA QUE EL VAGO SE LLENE
             //while(Wango[4]==nul || client_row == null)
 
             // Lista de persona que intentaron usar la montaña rusa
-            List<Person> TryList = new List<Person>(); 
+            //List<Person> TryList = new List<Person>(); 
             //TryList.Add(client_row[0]);
 
             //Metodo 

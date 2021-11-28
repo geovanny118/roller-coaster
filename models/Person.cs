@@ -23,7 +23,7 @@ public class Person {
 
         int numberOfClients = 0;
 
-        while(numberOfClients<12){
+        while(numberOfClients<15){
             row.Add(new Person(NAMES[random.Next(0, 6)], LASTNAMES[random.Next(0, 6)], LASTNAMES[random.Next(0, 6)], LASTNAMES[random.Next(0, 6)]));
             numberOfClients++;
         }
@@ -32,7 +32,7 @@ public class Person {
     //Ver fila de clientes
     public void viewClientRow(){
         Console.WriteLine();
-        Console.WriteLine("Client List: ");
+        Console.WriteLine("Fila de clientes: ");
         int i = 1;
         foreach (var item in row)
         {

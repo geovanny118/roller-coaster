@@ -7,26 +7,90 @@ namespace EXCERCISE_ARP_5
     {     
         static void Main(string[] args)
         {
+            //valor multa
+            const double PENALTYVALUE = 2500;
 
             Person clients = new Person();
             clients.generateClientRow();
             clients.viewClientRow();
 
-            Wagon rollerCoaster = new Wagon();
+            //Lista de clientes con multa
+            List<Person> sanctionedList = new List<Person>();
 
+            //Lista de personas que intentaron ingresar 
+            List<Person> triedList = new List<Person>();
+
+            Wagon rollerCoaster = new Wagon();
+            rollerCoaster.setWagon();
+
+            //Mientras halla espacio disponible en la montaña rusa, puede agregar personas
+            while(rollerCoaster.availableSpace){
+                //verifica si una persona puede pasar al vagon (solo si no hay dos familiares en los vagones)
+                if(rollerCoaster.canEnterWagon(clients.row[0])){
+                    //ingresa persona al vagon
+                    rollerCoaster.addClient(clients.row[0]);
+                }else{
+                    //si la persona no puede pasar al vago, se agrega a una lista de sancionados
+                    sanctionedList.Add(clients.row[0]);
+                }
+                //Se agrega a la lista de intentos
+                triedList.Add(clients.row[0]);
+                //saca la persona que ingreso de la fila de espera
+                clients.row.RemoveAt(0);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Montaña Rusa LLena!!!");
+
+            Console.WriteLine();
+            Console.WriteLine("Pasajeros en la montaña Rusa:");
+            Console.WriteLine("Puesto 1 - Puesto 2");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(rollerCoaster.wagon[i].Place_1.Name + " " + rollerCoaster.wagon[i].Place_1.Lastname_3 + " - " + rollerCoaster.wagon[i].Place_2.Name + " " + rollerCoaster.wagon[i].Place_2.Lastname_3);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Lista de clientes sancionados:");
+            foreach (var sanctioned in sanctionedList)
+            {
+                Console.WriteLine(sanctioned.Name + " " + sanctioned.Lastname_3);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Total pasajeros con multa:" + sanctionedList.Count);
+
+            Console.WriteLine();
+            Console.WriteLine("Total valor multa del dia:" + (sanctionedList.Count * PENALTYVALUE));
+
+            Console.WriteLine();
+            Console.WriteLine("Lista de clientes que no ingresaron:");
+            foreach (var personOutside in clients.row)
+            {
+                Console.WriteLine(personOutside.Name + " " + personOutside.Lastname_3);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Lista de personas que intentaron ingresar a la montaña rusa (los que ingresaron y los que fueron sancionados antes de llenar todos los vagones)");
+            foreach (var personTried in triedList)
+            {
+                Console.WriteLine(personTried.Name + " " + personTried.Lastname_3);
+            }
+
+/*
             Console.WriteLine();
             Console.WriteLine("hay puesto disponible; " + rollerCoaster.availableSpace);
             if(rollerCoaster.availableSpace){
-                rollerCoaster.addClient(clients.row[0]); //vagon 1 posicion 1
-                rollerCoaster.addClient(clients.row[1]); //vagon 1 posicion 2
-                rollerCoaster.addClient(clients.row[2]); //vagon 2 posicion 1
-                rollerCoaster.addClient(clients.row[3]); //vagon 2 posicion 2
-                rollerCoaster.addClient(clients.row[4]); //vagon 3 posicion 1
-                rollerCoaster.addClient(clients.row[5]); //vagon 3 posicion 2
-                rollerCoaster.addClient(clients.row[6]); //vagon 4 posicion 1
-                rollerCoaster.addClient(clients.row[7]); //vagon 4 posicion 2
-                rollerCoaster.addClient(clients.row[8]); //vagon 5 posicion 1
-                rollerCoaster.addClient(clients.row[9]); //vagon 5 posicion 2
+                //rollerCoaster.addClient(clients.row[0]); //vagon 1 posicion 1
+                //rollerCoaster.addClient(clients.row[1]); //vagon 1 posicion 2
+                //rollerCoaster.addClient(clients.row[2]); //vagon 2 posicion 1
+                //rollerCoaster.addClient(clients.row[3]); //vagon 2 posicion 2
+                //rollerCoaster.addClient(clients.row[4]); //vagon 3 posicion 1
+                //rollerCoaster.addClient(clients.row[5]); //vagon 3 posicion 2
+                //rollerCoaster.addClient(clients.row[6]); //vagon 4 posicion 1
+                //rollerCoaster.addClient(clients.row[7]); //vagon 4 posicion 2
+                //rollerCoaster.addClient(clients.row[8]); //vagon 5 posicion 1
+                //rollerCoaster.addClient(clients.row[9]); //vagon 5 posicion 2
             }
             Console.WriteLine("hay puesto disponible; " + rollerCoaster.availableSpace);
 
@@ -43,7 +107,7 @@ namespace EXCERCISE_ARP_5
                 Console.WriteLine(rollerCoaster.wagon[i].Place_1.Name + " " + rollerCoaster.wagon[i].Place_1.Lastname_3 + " - " + rollerCoaster.wagon[i].Place_2.Name + " " + rollerCoaster.wagon[i].Place_2.Lastname_3);
             }
             
-
+*/
             //LLenar lista de personas que intentaron entrar al tren, OJO SOLO SE USA HASTA QUE EL VAGO SE LLENE
             //while(Wango[4]==nul || client_row == null)
 

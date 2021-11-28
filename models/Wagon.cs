@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 public class Wagon
 {
     public Person Place_1 { get; set; }
@@ -11,9 +10,6 @@ public class Wagon
         Place_2 = place_2;
     }
 
-    //valor multa
-    private const double PENALTYVALUE = 2500;
-
     //arreglo vagon
     public Wagon[] wagon = new Wagon[5];
 
@@ -23,16 +19,20 @@ public class Wagon
     //verifica si hay espacio disponible en la montaña rusa
     public Boolean availableSpace { get; set; } = true;
 
+    //inicializa los tipos de variables del arreglo
+    public void setWagon()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            wagon[i] = new Wagon();
+            wagon[i].Place_1 = new Person();
+            wagon[i].Place_2 = new Person();
+        }
+    }
+
     //Asigna una persona a un lugar con espacio disponible segun el orden
     public void addClient(Person client)
     {
-        if (wagon[actualPosition] == null)
-        {
-            wagon[actualPosition] = new Wagon();
-            wagon[actualPosition].Place_1 = new Person();
-            wagon[actualPosition].Place_2 = new Person();
-        }
-
         if (actualPosition < 5)
         {
             if (wagon[actualPosition].Place_1.Name == null)
@@ -68,13 +68,16 @@ public class Wagon
                 canEnterWagon = false;
             }
 
-            if (wagon[i].Place_1.Lastname_3.Equals(lastname))
-            {
-                amountPerFamily++;
+            if(wagon[i].Place_1.Lastname_3 != null) {
+                if (wagon[i].Place_1.Lastname_3.Equals(lastname))
+                {
+                    amountPerFamily++;
+                }
             }
 
-            if (wagon[i].Place_2.Lastname_3.Equals(lastname))
+            if (wagon[i].Place_2.Lastname_3 != null)
             {
+                if (wagon[i].Place_2.Lastname_3.Equals(lastname))
                 {
                     amountPerFamily++;
                 }
